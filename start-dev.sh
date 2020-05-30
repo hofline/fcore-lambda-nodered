@@ -1,0 +1,1 @@
+export DEVELOPMENT=1 && node app.js

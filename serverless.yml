@@ -1,0 +1,61 @@
+service: fcore-lambda-nodered
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-prune-plugin
+  - serverless-manifest-plugin
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 512
+  timeout: 300
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-west-2'}
+  deploymentBucket: ${opt:bucket, 'my-sls-deployments-${opt:region}'}
+  apiKeys:
+    - ${self:service}-${self:provider.stage}
+  
+  versionFunctions: false
+
+  environment:
+    STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+    DEVELOPMENT: 0
+
+custom:
+  apiVersion: v1
+
+  pseudoParameters:
+    skipRegionReplace: true
+
+  prune:
+    automatic: true
+    number: 1
+
+  tags:
+    project:
+      key: Project
+      value: My
+    component:
+      key: Component
+      value: My
+
+package:
+  individually: true
+  excludeDevDependencies: true
+  exclude:
+      - .idea
+      - .serverless
+      - .vscode
+
+functions:
+  Api:
+    name: ${self:service}-${self:provider.stage}-api
+    timeout: 29
+    handler: app.handler
+    events:
+      - http:
+          path: /api/{proxy+}
+          method: POST
+          private: false

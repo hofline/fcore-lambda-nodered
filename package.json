@@ -1,0 +1,15 @@
+{
+    "name": "fcore-lambda-nodered",
+    "version": "1.0.0",
+    "dependencies": {
+        "fs-extra": "^8.1.0",
+        "node-red": "^1.0.3",
+        "serverless-http": "^2.3.1"
+    },
+    "devDependencies": {
+        "request": "^2.88.0",
+        "serverless-manifest-plugin": "0.0.9",
+        "serverless-prune-plugin": "^1.4.1",
+        "serverless-pseudo-parameters": "^2.5.0"
+    }
+}
