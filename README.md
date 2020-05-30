@@ -1,6 +1,9 @@
 # fcore-lambda-nodered #
 
-Serverless nodered base project with AWS Lambda
+Serverless Node-RED base project with AWS Lambda and Express for IoT and more. Low-code programming for event-driven applications
+
+- [Flow Based Programming](https://en.wikipedia.org/wiki/Flow-based_programming)
+- [Node-RED](https://nodered.org/)
 
 ### Gettting started
 ```
@@ -12,22 +15,14 @@ npm install
 export DEVELOPMENT=1 && node app.js
 ```
 
-### local test
+### Navigate to Node-Red Console
 ```
-sls invoke local -f api --stage dev --region us-west-2
+http://localhost:1880/red
 ```
 
-### deploy DEV ###
+### Serverless deployment ###
 ```
 sls deploy --stage dev --region us-west-2 --bucket my-sls-deployments-us-west-2 --aws-profile profile-dev
 ```
 
-### deploy QA ###
-```
-sls deploy --region us-east-1 --bucket my-sls-deployments-us-west-2 --stage qa --aws-profile profile-qa
-```
-
-### Warning!!! deploy HOMO ###
-```
-sls deploy --region us-west-2 --bucket my-sls-deployments-us-west-2--stage homo --aws-profile profile-prod
-```
+### More nodes for AWS [https://www.npmjs.com/package/node-red-contrib-aws](https://www.npmjs.com/package/node-red-contrib-aws)
