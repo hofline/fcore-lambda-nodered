@@ -16,7 +16,7 @@ npm install
 export DEVELOPMENT=1 && node app.js
 ```
 
-### Navigate to Node-Red Console
+### Browse Node-Red Console
 ```
 http://localhost:1880/red
 ```
