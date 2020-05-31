@@ -4,6 +4,7 @@ Serverless Node-RED base project with AWS Lambda and Express for IoT and more. L
 
 - [Flow Based Programming](https://en.wikipedia.org/wiki/Flow-based_programming)
 - [Node-RED](https://nodered.org/)
+- [Node-RED on Github](https://github.com/node-red/node-red)
 
 ### Gettting started
 ```
